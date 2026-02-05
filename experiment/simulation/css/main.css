@@ -1,1 +1,1013 @@
-/* You CSS goes in here */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background: #222; /* Dark background for the empty space */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide scrollbars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FIXED RESOLUTION CONTAINER */
+.sim-screen {
+    /* 1. Set the exact resolution you designed for */
+    width: 1536px;  
+    height: 730px;  
+
+    /* 2. Keep the background inside the simulation */
+    background: #f5f7fa;
+    position: relative;
+    
+    /* 3. Ensure scaling happens from the center */
+    transform-origin: center center;
+    
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Optional: makes it pop */
+}
+
+/* INSTRUCTION BOX STYLING */
+#instructionBox {
+    position: absolute;
+    top: 20px;
+    left: 80%;
+    transform: translateX(-50%); /* Centers it perfectly */
+    
+    background-color: #ffeb3b; /* Yellow background like a note */
+    color: #222;
+    border: 2px solid #222;
+    
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    
+    z-index: 10000; /* Ensures it sits on top of everything */
+    pointer-events: none; /* Allows you to click objects 'behind' it if they overlap */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    
+    transition: all 0.3s ease-in-out;
+}
+
+#instructionBox::after {
+    content: "Prepare the compaction factor apparatus";
+}
+
+.sim-screen[data-step="1"] #instructionBox::after { content: "Place the cylinder on the compaction factor apparatus"; }
+.sim-screen[data-step="2"] #instructionBox::after { content: "Prepare the concrete and collect it a bin"; }
+.sim-screen[data-step="3"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="4"] #instructionBox::after { content: "Shovel a small amount of concrete"; }
+.sim-screen[data-step="5"] #instructionBox::after { content: "Pour it in the hopper"; }
+.sim-screen[data-step="6"] #instructionBox::after { content: "Shovel a small amount of concrete and pour it in the hopper"; }
+.sim-screen[data-step="7"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="8"] #instructionBox::after { content: "Open the lid of the hopper"; }
+.sim-screen[data-step="9"] #instructionBox::after { content: "Open the lid of the hopper"; }
+.sim-screen[data-step="10"] #instructionBox::after { content: "Weigh the cylinder filled with concrete"; }
+.sim-screen[data-step="11"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="12"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="13"] #instructionBox::after { content: "Shovel a small amount of concrete"; }
+.sim-screen[data-step="14"] #instructionBox::after { content: "Pour it in the container"; }
+.sim-screen[data-step="15"] #instructionBox::after { content: "Tamp the concrete in the cylinder for 25 times"; }
+.sim-screen[data-step="16"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="17"] #instructionBox::after { content: "Shovel a small amount of concrete"; }
+.sim-screen[data-step="18"] #instructionBox::after { content: "Pour it in the container"; }
+.sim-screen[data-step="19"] #instructionBox::after { content: "Tamp the concrete in the cylinder for 25 times"; }
+.sim-screen[data-step="20"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="21"] #instructionBox::after { content: "Shovel a small amount of concrete"; }
+.sim-screen[data-step="22"] #instructionBox::after { content: "Pour it in the container"; }
+.sim-screen[data-step="23"] #instructionBox::after { content: "Tamp the concrete in the cylinder for 25 times"; }
+.sim-screen[data-step="24"] #instructionBox::after { content: "Click next"; }
+.sim-screen[data-step="25"] #instructionBox::after { content: "Shovel a small amount of concrete"; }
+.sim-screen[data-step="26"] #instructionBox::after { content: "Pour it in the container"; }
+.sim-screen[data-step="27"] #instructionBox::after { content: "Tamp the concrete in the cylinder for 25 times and level the surface of the concrete"; }
+.sim-screen[data-step="28"] #instructionBox::after { content: "Weigh the cylinder filled with tamped concrete"; }
+.sim-screen[data-step="29"] #instructionBox::after { content: "Test Completed"; }
+
+/* CENTER TITLE */
+#titleScreen {
+    position: absolute;
+    text-align: center;
+    z-index: 5;
+
+    width: 100%;        /* Span the full width */
+    top: 50%;           /* Move down to middle */
+    left: 50%;          /* Move right to middle */
+    transform: translate(-50%, -50%); /* Pull back to center exactly */
+}
+
+#testTitle {
+    font-size: 48px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: #555;
+}
+
+/* NEXT BUTTON IMAGE */
+#nextBtn {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+
+    width: 140px;
+    cursor: pointer;
+
+    z-index: 9999;
+    user-select: none;
+
+    animation: blink 1.2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+
+
+/* STAND IMAGE */
+#standImg {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    opacity: 0;              /* Invisible but present */
+    transition: opacity 0.6s ease-out;
+
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    
+    pointer-events: none;
+    z-index: 500;
+}
+
+/* TRAP IMAGE */
+#trapImg {
+    position: absolute;
+    width: 150px; /* adjust as needed */
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+
+    top: 30%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: auto;   /* allow clicking */
+    cursor: pointer;
+    z-index: 400;
+}
+
+/* TRAP1 IMAGE */
+#trap1Img {
+    position: absolute;
+    width: 150px;
+    opacity: 0;                 /* initially invisible */
+    transition: opacity 0.6s ease-out;
+
+    top: 55%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: auto;       /* disabled until JS enables */
+    cursor: pointer;
+
+    z-index: 400;
+}
+
+
+
+
+/* CYLINDER IMAGE */
+#cylinderImg {
+    position: absolute;
+    width: 140px;
+    height: auto;
+
+    opacity: 0; /* Invisible initially */
+    transition: opacity 0.6s ease-out;
+
+    top: 68.1%;            /* Adjust to your layout */
+    left: 32.5%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* SPADE IMAGE */
+#spadeImg {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+
+    top: 67%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: auto;    /* <-- very important */
+    cursor: pointer;
+
+    z-index: 11;
+}
+
+
+/* TRAY IMAGE */
+#trayImg {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+
+    top: 75%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+
+
+
+/* ARROW IMAGE */
+#arrowImg {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    opacity: 0;  /* stays invisible */
+
+    transition: opacity 0.6s ease-out;
+
+    top: 57%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 1200;
+
+    /* DO NOT add animation here */
+}
+
+
+/* Separate animation so we can control it independently */
+@keyframes blinkArrow {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* CONCRETE IMAGE */
+#concreteImg {
+    position: absolute;
+    width: 80px;
+    opacity: 0;      /* hidden initially */
+    transition: opacity 0.6s ease-in-out;
+
+    top: 70%;        /* adjust to sit on the spade */
+    left: 60%;       /* same as spade x-axis */
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 1500;
+
+}
+
+/* Shake animation (left-right 3 times) */
+@keyframes shakeSpade {
+    0%   { transform: translate(-50%, -50%) rotate(0deg); }
+    20%  { transform: translate(-60%, -40%) rotate(0deg); }
+    40%  { transform: translate(-40%, -50%) rotate(0deg); }
+    60%  { transform: translate(-60%, -40%) rotate(0deg); }
+    80%  { transform: translate(-40%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes moveUpTogether {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(0, -400px); }
+}
+
+@keyframes moveLeftTogether {
+    from { transform: translate(0, -400px); }
+    to   { transform: translate(-425px, -400px); }
+}
+
+
+/* Concrete drops straight down */
+@keyframes dropConcrete {
+    from { transform: translate(-425px, -400px); }
+    to   { transform: translate(-425px, -340px); }
+}
+
+/* Spade returns RIGHT to original X */
+@keyframes spadeRightBack {
+    from { transform: translate(-425px, -400px); }
+    to   { transform: translate(0, -400px); }
+}
+
+/* Spade returns DOWN to original Y */
+@keyframes spadeDownBack {
+    from { transform: translate(0, -400px); }
+    to   { transform: translate(0, 0); }
+}
+
+#concrete1Img {
+    position: absolute;
+    width: 60px;
+    height: auto;
+
+    /* ✅ Change these to adjust final position */
+    top: 21.1%;          /* move up/down */
+    left: 30.5%;         /* move left/right */
+
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+
+    z-index: 1600;
+
+    transform-origin: center;
+    transition: opacity 0.4s ease-in-out;
+    will-change: transform, opacity;
+}
+
+@keyframes shakeSpade2 {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(-20px, 0); }
+    40%  { transform: translate(20px, 0); }
+    60%  { transform: translate(-20px, 0); }
+    80%  { transform: translate(20px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+/* ================================
+   NEW CONCRETE PIECE (Concrete 2)
+   ================================ */
+#concrete2Img {
+    position: absolute;
+
+    /* 📌 Size — fully editable */
+    width: 75px;
+    height: auto;
+
+    /* 📌 Initial position — change freely */
+    top: 68%;          /* move UP/DOWN */
+    left: 60%;         /* move LEFT/RIGHT */
+
+    /* Center animation anchor */
+    transform: translate(-50%, -50%);
+
+    /* Hidden initially */
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 1700;     /* Above all concrete */
+
+    /* Smooth fade */
+    transition: opacity 0.4s ease-in-out;
+
+    will-change: transform, opacity;
+}
+
+
+@keyframes dropConcrete2 {
+    from { transform: translate(-425px, -400px); }
+    to   { transform: translate(-425px, -340px); }
+}
+
+@keyframes spadeRightBack2 {
+    from { transform: translate(-425px, -400px); }
+    to   { transform: translate(0, -400px); }
+}
+
+@keyframes spadeDownBack2 {
+    from { transform: translate(0, -400px); }
+    to   { transform: translate(0, 0); }
+}
+
+/* ================================
+   SECOND CONCRETE PIECE (Concrete 2)
+   ================================ */
+#concrete2Img {
+    position: absolute;
+
+    /* 🔧 Size — edit freely */
+    width: 75px;
+    height: auto;
+
+    /* 🔧 Initial position BEFORE pickup
+       (move these to adjust where the piece appears) */
+    top: 68%;          
+    left: 60%;         
+
+    /* Keep centered relative to top/left */
+    transform: translate(-50%, -50%);
+
+    /* Hidden until step 6 */
+    opacity: 0;
+    pointer-events: none;
+
+    /* Always above other images */
+}
+
+#concreteFinal2Img {
+    position: absolute;
+
+    /* 📌 SET YOUR FINAL POSITION HERE */
+    top: 18%;      /* change freely */
+    left: 29.77%;     /* change freely */
+
+    width: 80px;   /* size editable */
+    height: auto;
+
+    opacity: 0;          /* hidden initially */
+    pointer-events: none;
+    user-select: none;
+
+    z-index: 1800;
+
+    transform-origin: center;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#arrowLeftImg {
+    position: absolute;
+    top: 30%;
+    left: 41.5%;
+    width: 80px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1900;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: opacity 0.4s ease-in-out;
+}
+
+@keyframes blinkArrowLeft {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+
+/* Concrete Piece 3 (NEW) */
+#concrete3Img {
+    position: absolute;
+
+    top: 18%;      
+    left: 30.05%; 
+
+    width: 70px;
+    opacity: 0;
+    display: none;  /* <-- hides it fully from the start */
+    pointer-events: none;
+    z-index: 2000;
+    transform-origin: center;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Trap slide right */
+@keyframes slideTrapRight {
+    from { transform:  rotate(0deg) scale(100%); }
+    to   { transform:  rotate(-90deg) scale(80%); } /* adjust how much it slides */
+}
+
+/* Concrete 3 drop animation */
+@keyframes dropConcrete3 {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(0, 200px); }  /* set downward distance */
+}
+
+#concrete3FinalImg {
+    position: absolute;
+    top: 41%;      /* same final drop location */
+    left: 29.77%; 
+    width: 83px;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2100;
+    transform-origin: center;
+
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;   /* good */
+}
+
+#arrowLeft2Img {
+    position: absolute;
+    top: 55%;
+    left: 41.5%;
+    width: 80px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1900;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Concrete piece 4 (falling) */
+#concrete4Img {
+    position: absolute;
+    top: 43%;        /* same as concrete3Final top */
+    left: 30.2%;
+    width: 70px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    z-index: 2200;
+    transform-origin: center;
+    transition: opacity 0.3s ease-in-out;
+       pointer-events: none;   /* good */
+}
+
+/* Falling animation for piece 4 */
+@keyframes dropConcrete4 {
+    from { transform: translate(0,0); }
+    to   { transform: translate(0, 200px); }
+}
+
+/* Final static concrete 4 */
+#concrete4FinalImg {
+    position: absolute;
+    top: calc(43% + 153px);  /* same drop distance */
+    left: 29.9%;
+    width: 81px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2300;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#concrete3FinalImg,
+#concrete4FinalImg {
+    pointer-events: none;
+}
+
+.second-weighing-pos#weightMachine {
+    left: 38.5% !important;
+    top: 65% !important;
+    
+    /* Reset previous constraints */
+    right: auto !important;
+    bottom: auto !important;
+    
+    /* Center it */
+    z-index: 500 !important;
+}
+
+.second-weighing-pos#pointerImg {
+    left: 44.56% !important;
+    top: 74.94% !important;
+    
+    right: auto !important;
+    bottom: auto !important;
+    
+    /* Center it (Rotation is handled by JS updates) */
+    transform: rotate(0deg); 
+    z-index: 510 !important;
+}
+
+#weightMachine {
+    position: absolute;
+    width: 200px;             /* adjust as you like */
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+
+    bottom: 300px;             /* adjust position */
+    right: 22%;               /* adjust position */
+
+    pointer-events: none;
+    z-index: 120;
+}
+
+#pointerImg {
+    position: absolute;
+    width: 10px; 
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+
+    bottom: 340px;           /* adjust to match machine */
+    right: 28.4%;
+
+    pointer-events: none;
+    z-index: 130;            /* above machine */
+
+    transform-origin: 50% 50%;
+}
+
+
+/* FIRST move → RIGHT */
+@keyframes moveRight1 {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(220px, 0); }  /* adjust distance */
+}
+
+/* SECOND move → UP */
+@keyframes moveUp1 {
+    from { transform: translate(220px, 0); }
+    to   { transform: translate(220px, -280px); }  /* adjust distance */
+}
+
+/* THIRD move → RIGHT again */
+@keyframes moveRight2 {
+    from { transform: translate(220px, -280px); }
+    to   { transform: translate(595px, -251px); }  /* adjust distance */
+}
+
+#cylinder1Img {
+    position: absolute;
+    width: 250px;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    opacity: 0;
+    display: none;   /* ⭐ THE IMPORTANT FIX */
+    transition: opacity 0.5s ease-out;
+
+    z-index: 999;
+}   
+
+#arrow5Img {
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+    pointer-events: none;
+    top: 57%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Falling concrete piece 5 */
+#concrete5Img {
+    position: absolute;
+    width: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3100;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Final concrete piece 5 (hidden) */
+#concreteFinal5Img {
+    position: absolute;
+
+    /* Set correct final position */
+    top: 56.0%;
+    left: 41.2%;
+
+    width: 120px;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+
+    pointer-events: none;
+    z-index: 3200;
+    transition: opacity 0.4s ease-in-out;
+}
+
+@keyframes shakeSpade3 {
+    0% { transform: translate(0,0); }
+    20% { transform: translate(-20px,0); }
+    40% { transform: translate(20px,0); }
+    60% { transform: translate(-20px,0); }
+    80% { transform: translate(20px,0); }
+    100% { transform: translate(0,0); }
+}
+
+#levelerImg {
+    position: absolute;
+    width: 150px;
+    opacity: 0;
+    pointer-events: none;
+
+    /* Instead of translate(-50%, -50%) */
+    top: calc(64% - 100px);
+    left: calc(46.5% - 100px);
+    transform: rotate(90deg);
+    z-index: 5000;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Updated animation (now uses top/left instead of transform) */
+@keyframes levelerShakeRelative {
+    0% { transform: rotate(90deg) translate(0, 0); }
+    25% { transform: rotate(90deg) translate(-15%, -15%); } 
+    50% { transform: rotate(90deg) translate(15%, 15%); }
+    75% { transform: rotate(90deg) translate(-15%, 15%); }
+    100% { transform: rotate(90deg) translate(0, 0); }
+}
+
+#concreteFinal6Img {
+    position: absolute;
+
+    /* EXACT same position as concrete_5 */
+    top: 59.5%;
+    left: 40.6%;
+
+    width: 133px;
+
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+
+    z-index: 3300; /* above concrete 5 */
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Dropping concrete piece 7 */
+#concrete7Img {
+    position: absolute;
+    width: 80px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3500;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Final concrete 7 — SAME COORDINATES AS concrete_6 */
+#concreteFinal7Img {
+    position: absolute;
+    top: 59.5%;
+    left: 40.6%;
+    width: 133px;
+
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+
+    pointer-events: none;
+    z-index: 3600;
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#arrow7Img {
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+    pointer-events: none;
+    top: 57%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Piece 7 on spade */
+#concrete7Img {
+    position: absolute;
+    width: 80px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3100;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Final concrete 7 */
+#concreteFinal7Img {
+    position: absolute;
+    top: 47.3%;
+    left: 40.6%;
+    width: 133px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    pointer-events: none;
+    z-index: 3200;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#concreteFinal8Img {
+    position: absolute;
+    top: 52.8%;
+    left: 40.6%;
+    width: 133px;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 3400;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#arrow9Img {
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+    pointer-events: none;
+    top: 57%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#concrete9Img {
+    position: absolute;
+    width: 80px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3500;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#concreteFinal9Img {
+    position: absolute;
+    top: 42%;
+    left: 40.6%;
+    width: 132px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    pointer-events: none;
+    z-index: 3600;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#concreteFinal10Img {
+    position: absolute;
+    top: 45%;
+    left: 40.6%;
+    width: 133px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    pointer-events: none;
+    z-index: 3700;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#arrow10Img {
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+    pointer-events: none;
+    top: 57%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 3000;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#concrete11Img {
+    position: absolute;
+    width: 80px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 3500;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#concreteFinal11Img {
+    position: absolute;
+    top: 31.6%;
+    left: 40.6%;
+    width: 132px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    pointer-events: none;
+    z-index: 3600;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#concreteFinal12Img {
+    position: absolute;
+    top: 36.95%;
+    left: 40.8%;
+    width: 128px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    pointer-events: none;
+    z-index: 3700;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#arrowImg {
+    transition: top 0.3s, left 0.3s; 
+}
+
+/* 2. POSITION ONLY (Don't show it yet!) 
+      These rules simply tell the arrow where to go when the step matches.
+*/
+.sim-screen[data-step="15"] #arrowImg,
+.sim-screen[data-step="19"] #arrowImg,
+.sim-screen[data-step="23"] #arrowImg,
+.sim-screen[data-step="27"] #arrowImg {
+    top: 18% !important;   /* Move Up/Down */
+    left: 34.8% !important;  /* Move Left/Right */
+}
+
+/* === REPLACEMENT FOR INPUT BOX STYLES === */
+
+#inputModal {
+    display: none;          /* Hidden by default */
+    position: absolute;     /* Locked to the simulation screen */
+    
+    /* Position at Right Center */
+    top: 50%;
+    right: 50px;            
+    transform: translateY(-50%); 
+    
+    /* Ensure it doesn't take up full screen */
+    width: auto;
+    height: auto;
+    background: transparent; /* No Dark Background */
+    
+    z-index: 20000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    
+    /* Sharp border to look like a tool panel */
+    border: 2px solid #222;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    /* Optional: Limit width */
+    width: 260px;
+}
+
+.modal-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+    font-weight: bold;
+}
+
+.modal-content input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-content button {
+    padding: 8px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.modal-content button:hover {
+    background: #555;
+}
+
+#weightValueText {
+    position: absolute;
+    bottom: 350px; /* Aligned with machine */
+    right: 34%;    /* To the left of the machine */
+    font-size: 32px;
+    font-weight: bold;
+    color: #d32f2f; /* Red color for visibility */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 150;
+    padding: 5px 10px;
+    border-radius: 5px;
+}/* You CSS goes in here */
