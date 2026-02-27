@@ -429,10 +429,10 @@ body, html {
     position: absolute;
 
     /* 📌 SET YOUR FINAL POSITION HERE */
-    top: 18%;      /* change freely */
-    left: 29.77%;     /* change freely */
+    top: 16.4%;      /* change freely */
+    left: 29.7%;     /* change freely */
 
-    width: 80px;   /* size editable */
+    width: 84px;   /* size editable */
     height: auto;
 
     opacity: 0;          /* hidden initially */
