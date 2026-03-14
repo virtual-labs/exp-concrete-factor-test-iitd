@@ -1,0 +1,107 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "How many hoppers are there in the compaction factor apparatus?",
+      "answers": {
+        "a": "2",
+        "b": "3",
+        "c": "1",
+        "d": "No hoppers"
+      },
+      "explanations": {
+        "a": "Correct! The compaction factor apparatus has 2 hoppers - an upper hopper and a lower hopper.",
+        "b": "Incorrect. There are only 2 hoppers in the apparatus.",
+        "c": "Incorrect. There are 2 hoppers - upper and lower.",
+        "d": "Incorrect. The apparatus has 2 hoppers."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which Indian Standard (IS) Codes are adopted for performing the compaction factor test and apparatus specifications respectively?",
+      "answers": {
+        "a": "IS 1199 and IS 7320",
+        "b": "IS 5515 and IS 1199",
+        "c": "IS 1199 and IS 5515",
+        "d": "IS 7320 and IS 1199"
+      },
+      "explanations": {
+        "a": "Incorrect. IS 7320 is not the code for apparatus specifications of compaction factor test.",
+        "b": "Incorrect. The order is reversed.",
+        "c": "Correct! IS 1199 covers the test procedure and IS 5515 covers the apparatus specifications.",
+        "d": "Incorrect. IS 7320 is not relevant here."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Compaction Factor is the ratio of-",
+      "answers": {
+        "a": "Volumes of partially filled and fully compacted concrete",
+        "b": "Weights of fully compacted and partially filled concrete",
+        "c": "Volumes of fully compacted and partially filled concrete",
+        "d": "Weights of partially filled and fully compacted concrete"
+      },
+      "explanations": {
+        "a": "Incorrect. Compaction factor is based on weights, not volumes.",
+        "b": "Incorrect. The ratio is of partially compacted to fully compacted, not the other way around.",
+        "c": "Incorrect. Compaction factor is based on weights, not volumes.",
+        "d": "Correct! Compaction Factor = Weight of partially compacted concrete / Weight of fully compacted concrete."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What are the dimensions of upper hopper top dia, lower hopper height and receiving cylinder dia in compaction factor apparatus?",
+      "answers": {
+        "a": "225 mm, 250 mm, 150 mm",
+        "b": "250 mm, 225 mm, 150 mm",
+        "c": "225 mm, 275 mm, 300 mm",
+        "d": "250 mm, 275 mm, 150 mm"
+      },
+      "explanations": {
+        "a": "Incorrect. The upper hopper top diameter is 250 mm, not 225 mm.",
+        "b": "Correct! Upper hopper top dia = 250 mm, lower hopper height = 225 mm, cylinder dia = 150 mm.",
+        "c": "Incorrect. These dimensions do not match the apparatus specifications.",
+        "d": "Incorrect. The lower hopper height is 225 mm, not 275 mm."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which test is used for low workable concretes or stiff mixes?",
+      "answers": {
+        "a": "Slump Test",
+        "b": "Flow Table Test",
+        "c": "Compaction Factor Test",
+        "d": "Vee-Bee Test"
+      },
+      "explanations": {
+        "a": "Incorrect. Slump test is not suitable for low workability concrete.",
+        "b": "Incorrect. Flow table test is used for higher workability concrete.",
+        "c": "Correct! The compaction factor test is specifically used for concrete with low workability, for which the slump test is not suitable.",
+        "d": "Incorrect. While Vee-Bee test can also be used for stiff mixes, the compaction factor test is the primary test for low workable concretes."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the difference between the bottom of upper hopper and the top of underlying cylinder?",
+      "answers": {
+        "a": "200 mm",
+        "b": "425 mm",
+        "c": "275 mm",
+        "d": "625 mm"
+      },
+      "explanations": {
+        "a": "Incorrect. 200 mm is the distance between individual components, not the total.",
+        "b": "Incorrect. This calculation is not correct.",
+        "c": "Incorrect. This is the internal height of the upper hopper.",
+        "d": "Correct! The total distance = 200 mm (upper to lower hopper) + 225 mm (lower hopper height) + 200 mm (lower hopper to cylinder) = 625 mm."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compaction Factor Test Simulation</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="sim-screen">
+
+    <div id="instructionBox"></div>
+    <div id="instructionBox2"></div>
+
+    <!-- TITLE SCREEN -->
+    <div id="titleScreen">
+        <div id="testTitle">Compaction Factor Test</div>
+        <div class="subtitle">Tap Next to Begin</div>
+    </div>
+
+    <!-- STAND IMAGE (present from start, just invisible) -->
+    <img id="standImg" src="images/stand1.png" alt="Stand">
+    <img id="trapImg" src="images/trap.png" alt="Trap">
+    <img id="trap1Img" src="images/trap1.png" alt="Trap 1">
+
+
+
+    <img id="cylinderImg" src="images/cylinder.png" alt="Cylinder">
+    <img id="spadeImg" src="images/spade.png" alt="Spade">
+    <img id="trayImg" src="images/concrete_tray.png" alt="Tray">
+
+    <img id="arrowImg" src="images/arrow.png" alt="Arrow">
+    <img id="concreteImg" src="images/concrete_piece.png" alt="Concrete">
+    <img id="concrete1Img" src="images/concrete_1.png" alt="Concrete 1">
+    <img id="concrete2Img" src="images/concrete_piece_2.png" alt="Concrete">
+    <img id="concreteFinal2Img" src="images/concrete_2.png" alt="Final Concrete 2">
+    <img id="arrowLeftImg" src="images/arrow_left.png" alt="Left Arrow">
+    <img id="concrete3Img" src="images/concrete_piece_3.png" alt="Concrete Piece 3">
+    <img id="concrete3FinalImg" src="images/concrete_3.png" alt="Final Concrete 3">
+    <img id="arrowLeft2Img" src="images/arrow_left.png" alt="Second Left Arrow">
+    <img id="concrete4Img" src="images/concrete_piece_4.png" alt="Concrete Piece 4">
+    <img id="concrete4FinalImg" src="images/concrete_4.png" alt="Final Concrete 4">
+    <img id="weightMachine" src="images/weighing machine.png" alt="Weight Machine">
+    <img id="pointerImg" src="images/pointer.png" alt="Pointer">
+    <div id="weightValueText">W1 = 15.0 kg</div>
+    <img id="cylinder1Img" src="images/cylinder1.png" alt="Cylinder 1">
+    <img id="arrow5Img" src="images/arrow.png" alt="Arrow 5">
+
+    <img id="concrete5Img" src="images/concrete_piece_5.png" alt="Concrete Piece 5">
+
+    <img id="concreteFinal5Img" src="images/concrete_5.png" alt="Final Concrete 5">
+    <img id="levelerImg" src="images/leveler.png" alt="Leveler">
+    <img id="concreteFinal6Img" src="images/concrete_6.png" alt="Final Concrete 6">
+    <img id="concrete7Img" src="images/concrete_piece_7.png" alt="Concrete Piece 7">
+    <img id="concreteFinal7Img" src="images/concrete_7.png" alt="Final Concrete 7">
+    <img id="arrow7Img" src="images/arrow.png" alt="Arrow 7">
+    <img id="concreteFinal8Img" src="images/concrete_8.png" alt="Final Concrete 8">
+    <img id="arrow9Img" src="images/arrow.png" alt="Arrow 9">
+
+    <img id="concrete9Img" src="images/concrete_piece_9.png" alt="Concrete Piece 9">
+    <img id="concreteFinal9Img" src="images/concrete_9.png" alt="Final Concrete 9">
+
+    <img id="concreteFinal10Img" src="images/concrete_10.png" alt="Final Concrete 10">
+    <img id="arrow10Img" src="images/arrow.png" alt="Arrow 10">
+
+    <img id="concrete11Img" src="images/concrete_piece_11.png" alt="Concrete Piece 11">
+    <img id="concreteFinal11Img" src="images/concrete_11.png" alt="Final Concrete 11">
+
+    <img id="concreteFinal12Img" src="images/concrete_12.png" alt="Final Concrete 12">
+
+    
+    <!-- NEXT BUTTON IMAGE -->
+    <img id="nextBtn" src="images/next.png" alt="Next Button">
+
+    <div id="inputModal">
+        <div class="modal-content">
+            <h3 id="inputLabel">Enter Weight:</h3>
+            <input type="number" id="weightInput" placeholder="kg" step="0.1">
+            <button onclick="submitWeight()">Submit</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/main.js"></script>
+
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
