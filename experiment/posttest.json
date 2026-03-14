@@ -2,37 +2,88 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Find the compaction factor of concrete using the following data: Weight of partially filled concrete with cylinder = 16 kg, Weight of fully compacted concrete only = 13 kg, Weight of empty cylinder = 9 kg",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "0.54",
+        "b": "0.75",
+        "c": "4.0",
+        "d": "0.25"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct! Weight of partially compacted concrete = 16 - 9 = 7 kg. Compaction Factor = 7/13 = 0.54.",
+        "b": "Incorrect. Check the calculation: W1 = 16 - 9 = 7 kg, CF = 7/13 = 0.54.",
+        "c": "Incorrect. Check the calculation: W1 = 16 - 9 = 7 kg, CF = 7/13 = 0.54.",
+        "d": "Incorrect. Check the calculation: W1 = 16 - 9 = 7 kg, CF = 7/13 = 0.54."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A compaction factor of 0.79 indicates that the workability of concrete mix is:",
+      "answers": {
+        "a": "Very Low",
+        "b": "Low",
+        "c": "Medium",
+        "d": "Very High"
+      },
+      "explanations": {
+        "a": "Correct! A compaction factor of 0.79 falls in the Very Low workability range (0.78 - 0.80).",
+        "b": "Incorrect. Low workability corresponds to CF range of 0.80 - 0.85.",
+        "c": "Incorrect. Medium workability corresponds to CF range of 0.85 - 0.92.",
+        "d": "Incorrect. Very High/High workability corresponds to CF range of 0.92 - 1.00."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the ratio of slump value in mm to that of compaction factor for the concrete mix for low degree of workability concrete? (Reference: Very Low - 1.25 cm, 0.79 | Low - 5.0 cm, 0.825 | Medium - 7.5 cm, 0.885 | Very High - 12.5 cm, 0.96)",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "15.822",
+        "b": "6.061",
+        "c": "1.5822",
+        "d": "60.61"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. For low workability: slump = 50 mm, CF = 0.825, ratio = 50/0.825 = 60.61.",
+        "b": "Incorrect. Make sure to convert slump from cm to mm first.",
+        "c": "Incorrect. The slump value should be in mm, not cm.",
+        "d": "Correct! For low workability: slump = 5.0 cm = 50 mm, CF = 0.825. Ratio = 50/0.825 = 60.61."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "If W be the weight of empty cylinder, W1 be the weight of partially filled concrete only and W2 be the weight of fully compacted concrete with cylinder, then which of the following is the correct formula for finding the compaction factor?",
+      "answers": {
+        "a": "W1-W/W2-W",
+        "b": "W2-W/W1-W",
+        "c": "W1/W2-W",
+        "d": "W1-W/W2"
+      },
+      "explanations": {
+        "a": "Incorrect. W1 is already the weight of concrete only, so no need to subtract W from W1.",
+        "b": "Incorrect. The formula should have partially compacted in numerator.",
+        "c": "Correct! W1 is the weight of partially filled concrete only, and W2-W gives the weight of fully compacted concrete only. CF = W1/(W2-W).",
+        "d": "Incorrect. W2 includes the cylinder weight, so you need to subtract W."
       },
       "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In how many layers the concrete should be manually compacted in the receiver?",
+      "answers": {
+        "a": "3",
+        "b": "4",
+        "c": "5",
+        "d": "6"
+      },
+      "explanations": {
+        "a": "Incorrect. The cylinder is 285 mm deep and layers are 5 cm each.",
+        "b": "Incorrect. The cylinder is 285 mm deep and layers are 5 cm each.",
+        "c": "Incorrect. The cylinder is 285 mm deep and layers are 5 cm each, requiring 6 layers.",
+        "d": "Correct! The cylinder has internal height of 285 mm (28.5 cm) and concrete is placed in layers of 5 cm deep, requiring 6 layers."
+      },
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
   ]
