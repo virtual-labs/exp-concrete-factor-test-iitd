@@ -39,7 +39,6 @@ The figure displays the apparatus used for performing the test whose dimensions 
 | 4) | Distance between bottom of upper hopper and top of lower hopper | 200 | 1 |
 | 5) | Distance between bottom of lower hopper and top of cylinder | 200 | 1 |
 
-![Compaction Factor Apparatus](images/compaction_factor_apparatus_1.png)
 
 ### Other apparatus includes-
 
