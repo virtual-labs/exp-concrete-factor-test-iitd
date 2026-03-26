@@ -70,7 +70,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which test is used for low workable concretes or stiff mixes?",
+      "question": "Which test is used for low consistent concretes or stiff mixes?",
       "answers": {
         "a": "Slump Test",
         "b": "Flow Table Test",
@@ -78,9 +78,9 @@
         "d": "Vee-Bee Test"
       },
       "explanations": {
-        "a": "Incorrect. Slump test is not suitable for low workability concrete.",
-        "b": "Incorrect. Flow table test is used for higher workability concrete.",
-        "c": "Correct! The compaction factor test is specifically used for concrete with low workability, for which the slump test is not suitable.",
+        "a": "Incorrect. Slump test is not suitable for low consistency concrete.",
+        "b": "Incorrect. Flow table test is used for higher consistency concrete.",
+        "c": "Correct! The compaction factor test is specifically used for concrete with low consistency, for which the slump test is not suitable.",
         "d": "Incorrect. While Vee-Bee test can also be used for stiff mixes, the compaction factor test is the primary test for low workable concretes."
       },
       "correctAnswer": "c",
