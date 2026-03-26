@@ -55,15 +55,15 @@
     {
       "question": "If W be the weight of empty cylinder, W1 be the weight of partially filled concrete only and W2 be the weight of fully compacted concrete with cylinder, then which of the following is the correct formula for finding the compaction factor?",
       "answers": {
-        "a": "W1-W/W2-W",
-        "b": "W2-W/W1-W",
-        "c": "W1/W2-W",
-        "d": "W1-W/W2"
+        "a": "(W1-W)/(W2-W)",
+        "b": "(W2-W)/(W1-W)",
+        "c": "W1/(W2-W)",
+        "d": "(W1-W)/W2"
       },
       "explanations": {
         "a": "Incorrect. W1 is already the weight of concrete only, so no need to subtract W from W1.",
         "b": "Incorrect. The formula should have partially compacted in numerator.",
-        "c": "Correct! W1 is the weight of partially filled concrete only, and W2-W gives the weight of fully compacted concrete only. CF = W1/(W2-W).",
+        "c": "Correct! W1 is the weight of partially filled concrete only, and (W2-W) gives the weight of fully compacted concrete only. CF = W1/(W2-W).",
         "d": "Incorrect. W2 includes the cylinder weight, so you need to subtract W."
       },
       "correctAnswer": "c",
