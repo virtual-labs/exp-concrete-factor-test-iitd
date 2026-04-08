@@ -1,34 +1,29 @@
-### Procedure
+## Procedure
 
-1) After preparation of the concrete mix, with the help of a trowel or hand scoop, place the concrete in the upper hopper upto its brim and level it properly, then cover the cylinder.
+As per IS 1199, the procedure for conducting the Compaction factor test is as follows:
 
-2) Open the trapdoor to allow the concrete falling freely in the lower hopper, a rod can be used to stick off concrete from the internal surface if present.
+1. **Preparation:** Dampen the inside surfaces of the hoppers and cylinder with a moist cloth.
 
-3) Now, after concrete gets collected in lower hopper, open the trapdoor to allow the concrete get collected in the underlying cylinder. Trim off any excess concrete from cylinder and then record the **'weight of partially compacted concrete'** using weighing balance (empty cylinder weight already being tared) as **W1**.
+2. **Filling Upper Hopper:** Place the concrete sample gently into the upper hopper using a scoop. Fill it to the brim.
 
-4) Now, empty the cylinder and fill it with concrete in layers 5 cm deep, provided each layer must be compacted with 25 strokes of tamping rod or fully compacted using a needle vibrator.
+3. **Transfer to Lower Hopper:** Open the trap-door of the upper hopper to allow concrete to fall into the lower hopper. If concrete sticks, gently push it using a tamping rod. Keep the cylinder covered with trowels during this process.
 
-5) Level off the excess concrete and record the **'weight of fully compacted concrete'** using weighing balance (weight of empty cylinder already being tared) as **W2**.
+4. **Transfer to Cylinder:** After the concrete comes to rest, uncover the cylinder. Open the trap-door of the lower hopper to allow concrete to fall into the cylinder.
 
-### Calculation of Compaction Factor
+5. **Levelling the Surface:** Remove excess concrete using two trowels moved horizontally across the top. Ensure the surface is level with the top of the cylinder. Clean the outside of the cylinder.
 
-**Compaction Factor = Weight of partially compacted concrete / Weight of fully compacted concrete**
+6. **Weighing (Partially Compacted Concrete):** Weigh the concrete in the cylinder to the nearest 50 g. Record as the weight of partially compacted concrete.
 
-**Compaction Factor = W1 / W2**
+7. **Refilling for Full Compaction:** Refill the cylinder with concrete from the same sample in layers (~5 cm thick).
 
-### Interpretation of Result
+8. **Full Compaction:** Compact each layer thoroughly by tamping or preferably by vibration.
 
-| Compaction Factor | Degree of Workability | Applications |
-|---|---|---|
-| 0.78 – 0.80 | Very Low | Vibrated concrete for roads |
-| 0.80 – 0.85 | Low | Mass Concreting |
-| 0.85 – 0.92 | Medium | RCC |
-| 0.92 – 1.00 | High | Highly Reinforced Concrete |
+9. **Final Leveling:** Strike off the top surface level with the cylinder. Clean the outside of the cylinder.
 
-### Advantages
+10. **Weighing (Fully Compacted Concrete):** Weigh again to the nearest 50 g. Record as the weight of fully compacted concrete.
 
-This test has certain advantages as it is relatively simple and easy to perform requiring less expertise, also this test helps in assessing the uniformity and compatibility of concrete, ensuring that it meets the required standards, moreover it provides a measure for workability of concrete, allowing for adjustments in mix design to achieve desired consistency as per its application.
+11. **Calculation**
 
-### Disadvantages
+    - Compaction Factor = (Weight of partially compacted concrete) ÷ (Weight of fully compacted concrete)
+    - Express the result to two decimal places.
 
-This test has limited applicability as it is primarily suitable for assessing the workability of low to medium slump values, sometimes this test proves out to be inconvenient in the time sensitive construction projects scenarios.
