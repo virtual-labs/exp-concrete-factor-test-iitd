@@ -93,6 +93,8 @@ document.getElementById("nextBtn").addEventListener("click", () => {
             stand.style.opacity = 1;
             trap.style.opacity = 1;
             trap1.style.opacity = 1;
+
+            document.getElementById("scaleDisclaimer").style.opacity = 1;
             
             changeStep(1); // UPDATE INSTRUCTION
             unlockNextBtn();
